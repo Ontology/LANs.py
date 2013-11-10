@@ -17,6 +17,26 @@ __license__ = 'GPL'
 __contact__ = 'danhmcinerney with gmail'
 __version__ = 1.0
 
+
+print 'This version of LANs.py is a modified version done by Ontology on Github.'
+choice = raw_input('Install all prerequisites? Enter 0 for no or 1 for yes: ')
+if choice == "1":
+	import os
+	os.system('sudo apt-get install nmap')
+	os.system('sudo apt-get install nbtscan')
+	os.system('sudo apt-get install python-nfqueue')
+	os.system('sudo apt-get install python-scapy')
+	os.system('sudo apt-get install python-twisted')
+	os.system('sudo apt-get install build-essential')
+	os.system('sudo apt-get install libssl-dev')
+	os.system('wget http://download.aircrack-ng.org/aircrack-ng-1.2-beta1.tar.gz')
+	os.system('tar -zxvf aircrack-ng-1.2-beta1.tar.gz')
+	os.system('make -C aircrack-ng-1.2-beta1')
+	os.system('make -C aircrack-ng-1.2-beta1 install')
+	os.system('sudo airodump-ng-oui-update')
+	print 'Finished! LANs.py is ready to go!'
+else:
+	print 'Prerequisites will not be installed.'
 import logging
 logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 from scapy.all import *
